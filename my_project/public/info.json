@@ -1,0 +1,53 @@
+[
+    {
+        "id": "1",
+        "name": "Karljohan svamp",
+        "info": "Växer nära gran och ofta i skogsbryn, längs stigar och vid vägkanten."
+    }
+    ,{
+        "id": "2",
+        "name": "Trattkantarell",
+        "info": " växer framför allt i september och oktober i barrskog och bland mossa.växer ofta i stora grupper"
+    }
+    ,{
+        "id": "3",
+        "name": "Kantarell",
+        "info": " Har en fruktig och lite örtiga smak och blir  sällan ansatt av larver."
+    }
+    ,{
+        "id": "4",
+        "name": "Stolt fjällskivling",
+        "info": "Är storvuxen och växer i glesa, gräsiga skogar i söderläge och i skogsbryn långt in på hösten"
+    }
+    ,{
+        "id": "5",
+        "name": "Svart trumpetsvamp ",
+        "info": "växer med ek och hassel, men ibland också i granskog. Kan vara svår att upptäcka"
+    }
+    ,{
+        "id": "6",
+        "name": "Blek taggsvamp ",
+        "info": " växer i barrskogar eller blandskogar.Är fin och fast i konsistens"
+    }
+    ,{
+        "id": "7",
+        "name": "Blodriska",
+        "info": "Växer ihop med gran i lite fuktigare marker, exempelvis nära bäckar"
+    }
+    ,{
+        "id": "8",
+        "name": "Tallblodriskan",
+        "info": " Trivs där det växer  tall och föredrar lite torrare marker"
+    }
+    ,{
+        "id": "9",
+        "name": "Skogschampinjonen ",
+        "info": "Finns i de svenska skogarna"
+    }
+    ,{
+        "id": "10",
+        "name": "Trumpetsvamp",
+        "info": "Rödgul trumpetsvamp är en god matsvamp som är i säsong under augusti och september. "
+    }
+   
+]
