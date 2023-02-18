@@ -4,6 +4,10 @@ body{
     box-sizing: border-box;
     overflow-x: hidden;
     font-family: Georgia, 'Times New Roman', Times, serif;
+
+    position: relative;
+    padding-bottom: 4rem;
+    min-height: 100vh;
 }
 
 

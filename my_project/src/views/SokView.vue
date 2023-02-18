@@ -6,49 +6,76 @@ import PropsContent from "../components/PropsContent.vue";
 export default {
   data() {
     return {
-      textout: "",
       text: "",
+      lists: [],
     };
   },
-
   methods: {
     OnClick() {
-      if (this.text.length > 0) {
-        return (this.textout = this.text);
-      }
+      this.lists.push(this.text);
     },
+    ByClick(){
+      this.lists.splice(-1)
+    },
+    OffClick(){
+      this.lists.splice(0)
+    }
   },
 };
 </script>
 
 <template>
-  <h1 id="header">Här kan du skriva ett svamprecept</h1>
+  <h1 id="header">Här kan du skriva ett recept på en god svampsoppa</h1>
 
+  <!--Kanppen och textrutan för att skriva ett recept-->
   <div id="textboxcontainer">
     <input v-model="text" />
-    <input type="button" value="Skriv" @click="OnClick" />
+
+    <input
+      type="button"
+      value="Skriv"
+      @click="OnClick"
+      :disabled="this.text.length === 0"
+    />
+    <input type="button" @click="ByClick" value="Bort">
+
+    <input type="button" @click="OffClick" value="Radera">
   </div>
-  <div id="recept-container">
-    <h3 id="textout">{{ textout }}</h3>
+
+  <div id="wrapp-container">
+    <div id="recept-container">
+      <!--Här är min props komponent-->
+      <PropsContent :message="'Recept'" />
+<p v-if="this.text.length === 0">Fyll på med ingridienser</p>
+
+<div class="list-container">
+
+<!--Texten som renderas ut när man trycker på knappen-->
+<ol>
+    <li v-for="(lists) in lists">{{ lists }}</li>
+      </ol>
+</div>
+ 
+    </div>
   </div>
-  <!--Här är min props komponent-->
-  <PropsContent v-if="this.text.length === 0" :message="'Skriv ett recept'" />
 </template>
 
 <style scoped>
 
-#textout {
-  color: red;
-  text-align: center;
-}
 #textboxcontainer {
   display: flex;
   justify-content: center;
 }
 
-#recept-container{
+#recept-container {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  border: solid black;
+  width: 30vw;
+  height: auto;
+  margin-bottom: 4em;
+  margin-top: 1em; 
 }
 
 #header {
@@ -56,5 +83,22 @@ export default {
   margin-bottom: 2em;
   margin-top: 2em;
 }
+
+p{
+  text-align: center;
+}
+
+
+#wrapp-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+}
+
+.list-container{
+  display: flex;
+  justify-content: center;
+}
+
 
 </style>

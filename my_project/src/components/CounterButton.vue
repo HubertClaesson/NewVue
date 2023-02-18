@@ -2,82 +2,58 @@
 export default {
   data() {
     return {
-      textout:'0', 
-      text:'',
-    }
+      textout: 0,
+      text: "",
+    };
   },
-// watch:{
-//   text(word){
-//     this.tut = word
-//   }
-// },
-// computed:{
-//   textout(){
-//     return this.text
-//   }
-//   },
-  methods:{
-    OnClick(){
-      this.textout++ 
-    }
+  methods: {
+    OnClick() {
+      this.textout++;
+    },
+    byClick() {
+      this.textout = this.textout = 0;
+    },
   },
-  computed:{
-    ByClick(){
-      window.location.reload(); 
-}
-  }
-
-}
+};
 </script>
 
 <template>
+  <div id="flex-container">
+    <input type="button" value="Räkna träd" @click="OnClick" />
+    <input id="B-button" type="button" value="Börja om" @click="byClick" />
+  </div>
 
-<div id="flex-container">
-    <input type="button" value="Räkna träd" @click="OnClick"/>
-    <input id="B-button" type="button" value="Börja om" @click="ByClick"/>
-</div>
-
-   
-<h1 id="textout">{{ textout }}</h1>
-
-
+  <h1>{{ textout }}</h1>
 </template>
 
 <style scoped>
-
-h1{
-    color: red;
-    text-align: center;
-    background-color: aliceblue;
-    margin-left: 35%;
-    margin-right: 35%;
-    padding: 0.0.1em;
-    margin-top: 2em;
+h1 {
+  color: red;
+  text-align: center;
+  background-color: aliceblue;
+  margin-left: 35%;
+  margin-right: 35%;
+  padding: 0.1em;
+  margin-top: 2em;
 }
 
-input{
-    font-weight: 700;
-    background-color: rgb(255, 119, 0);
-    border: none;
-    padding: 1em;
-    border-radius: 15px;
+input {
+  font-weight: 700;
+  background-color: rgb(255, 119, 0);
+  border: none;
+  padding: 1em;
+  border-radius: 15px;
 }
 
-#B-button{
+#B-button {
   background-color: rgb(255, 0, 21);
   color: aliceblue;
 }
 
-
-
-#flex-container{
-
-    display: flex;
-    justify-content: center;
-    gap: 5em;
-    margin-top: 2em;
+#flex-container {
+  display: flex;
+  justify-content: center;
+  gap: 5em;
+  margin-top: 2em;
 }
 </style>
-
-
-
