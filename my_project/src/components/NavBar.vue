@@ -6,8 +6,8 @@ import { RouterLink, RouterView } from "vue-router";
   <nav>
     <ul>
       <li><RouterLink to="/">Hem</RouterLink></li>
-      <li><RouterLink to="/about">Svampar</RouterLink></li>
-      <li><RouterLink to="/sok">Recept</RouterLink></li>
+      <li><RouterLink to="/svamp">Svampar</RouterLink></li>
+      <li><RouterLink to="/recept">Recept</RouterLink></li>
     </ul>
   </nav>
   <RouterView />

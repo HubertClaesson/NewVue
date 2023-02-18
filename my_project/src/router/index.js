@@ -11,16 +11,16 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/about',
-      name: 'about',
+      path: '/svamp',
+      name: 'svamp',
       
-      component: () => import('../views/AboutView.vue')
+      component: () => import('../views/SvamparView.vue')
     },
     {
-      path: '/sok',
-      name: 'sok',
+      path: '/recept',
+      name: 'recept',
       // component: TestView 
-      component: () => import('../views/SokView.vue')
+      component: () => import('../views/ReceptView.vue')
     }
   ]
 })

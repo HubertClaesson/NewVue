@@ -27,26 +27,31 @@ export default {
 <template>
   <h1 id="header">Här kan du skriva ett recept på en god svampsoppa</h1>
 
-  <!--Kanppen och textrutan för att skriva ett recept-->
+  <!--Textrutan för att skriva ett recept-->
   <div id="textboxcontainer">
     <input v-model="text" />
-
+<!--Kanppen för att skriva en punkt på receptet-->
     <input
       type="button"
       value="Skriv"
       @click="OnClick"
       :disabled="this.text.length === 0"
     />
+    
+    <!--Knappen tarbort en punkt-->
     <input type="button" @click="ByClick" value="Bort">
 
+<!--Knappen tarbort alla punkter-->
     <input type="button" @click="OffClick" value="Radera">
   </div>
 
   <div id="wrapp-container">
+
     <div id="recept-container">
       <!--Här är min props komponent-->
       <PropsContent :message="'Recept'" />
-<p v-if="this.text.length === 0">Fyll på med ingridienser</p>
+
+<p v-if="this.text.length === 0">Fyll på med ingredienser</p>
 
 <div class="list-container">
 
@@ -95,7 +100,7 @@ p{
   margin-top: 2em;
 }
 
-.list-container{
+#list-container{
   display: flex;
   justify-content: center;
 }
