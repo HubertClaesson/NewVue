@@ -1,30 +1,59 @@
+<script setup>
+// import propsContent from '../components/PropsContent.vue'
+</script>
+
+
 <script>
- 
  export default{ 
  
  data(){
     return{
-        outs:[]
+      textbox:'',
+      outs:[]
     }
  },
- created(){
-    fetch('info.json')
+//  created(){
+//     fetch('info.json')
+//   .then((response) => response.json())
+//   .then((result) => {
+//     this.outs = result 
+//   })
+//   },
+  computed: {
+    Itemlist() {
+      if (this.textbox.length > 0) {
+        return this.outs.filter((item) =>
+          item.name.toLowerCase().includes(this.textbox.toLowerCase())
+        )
+      }
+
+      return this.outs
+    }
+  },
+  methods:{
+    Bob(){
+      fetch('info.json')
   .then((response) => response.json())
   .then((result) => {
     this.outs = result 
   })
+    }
   }
 }
 </script>
 
 <template>
+  <div id="flexinput">
+    <input type="text" v-model="textbox" placeholder="Sök på en svamp">
+    <input @click="Bob" type="Button" value="Sök" id="">
+  </div>
     <div id="wrapp">
-    <div v-for="outs in outs">
-      <h2>
-      {{ outs.
+    <div v-for="out in Itemlist" :key="out">
+      <h2 v-if="this.textbox.length > 0">
+      {{ out.
     name}}
     </h2>
-    <h3>{{ outs.info}}</h3>
+      <h3 v-if="this.textbox.length > 0">{{ out.info}}</h3>
     </div>
 </div>
 </template>
@@ -36,9 +65,12 @@ h1{
 }
 
 #wrapp{
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: center; */
+  display: grid;
+  grid-template-columns: repeat( 3, 1fr);
+  grid-template-rows: auto fill;
   gap: 2em;
 }
 
@@ -67,6 +99,15 @@ h3{
   background-color: rgb(38, 76, 50);
   color: rgb(255, 255, 255);
   padding: 1em;
-  
+}
+
+#flexinput{
+  display: flex;
+  justify-content: center;
+}
+#centeritem{
+  display: flex;
+  justify-content: center;
+  display: block;
 }
 </style>

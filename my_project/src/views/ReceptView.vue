@@ -8,6 +8,7 @@ export default {
     return {
       text: "",
       lists: [],
+      bob:'Recept'
     };
   },
   methods: {
@@ -49,7 +50,7 @@ export default {
 
     <div id="recept-container">
       <!--Här är min props komponent-->
-      <PropsContent :message="'Recept'" />
+      <PropsContent :message="bob"/>
 
 <p v-if="this.text.length === 0">Fyll på med ingredienser</p>
 
