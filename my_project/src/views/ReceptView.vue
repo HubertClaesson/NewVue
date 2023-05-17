@@ -94,6 +94,10 @@ p{
   text-align: center;
 }
 
+ol{
+  text-align: center;
+}
+
 
 #wrapp-container {
   display: flex;

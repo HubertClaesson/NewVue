@@ -12,13 +12,6 @@
       outs:[]
     }
  },
-//  created(){
-//     fetch('info.json')
-//   .then((response) => response.json())
-//   .then((result) => {
-//     this.outs = result 
-//   })
-//   },
   computed: {
     Itemlist() {
       if (this.textbox.length > 0) {
@@ -31,7 +24,7 @@
     }
   },
   methods:{
-    Bob(){
+    click(){
       fetch('info.json')
   .then((response) => response.json())
   .then((result) => {
@@ -45,7 +38,7 @@
 <template>
   <div id="flexinput">
     <input type="text" v-model="textbox" placeholder="Sök på en svamp">
-    <input @click="Bob" type="Button" value="Sök" id="">
+    <input @click="click" type="Button" value="Sök" id="">
   </div>
     <div id="wrapp">
     <div v-for="out in Itemlist" :key="out">
@@ -65,9 +58,6 @@ h1{
 }
 
 #wrapp{
-  /* display: flex;
-  flex-wrap: wrap;
-  justify-content: center; */
   display: grid;
   grid-template-columns: repeat( 3, 1fr);
   grid-template-rows: auto fill;
